@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 686544408490808259}
   - component: {fileID: 9165577461687236987}
   - component: {fileID: 3396316472498489956}
+  - component: {fileID: 6208088600144966100}
   m_Layer: 0
   m_Name: carrotSeed
   m_TagString: Interactable
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 5943946054535589137}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.26581, y: 1.27835, z: -0.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.24256442, y: 0.00979977, z: 0.3981826}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -136,3 +137,15 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0000001, y: 2, z: 1.0000001}
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940696}
+--- !u!114 &6208088600144966100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5943946054535589137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55922348bce2a0c4484835861981f473, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

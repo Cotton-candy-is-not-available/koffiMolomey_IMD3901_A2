@@ -21,6 +21,7 @@ public class PickupScript : MonoBehaviour
             heldObjRB.useGravity = false;//prevents object from falling
             heldObjRB.linearDamping = 10;
             heldObjRB.constraints = RigidbodyConstraints.FreezeRotation;//prevents object form rotation
+            heldObjRB.isKinematic = true;//prevents object from moving when hitting other objects in the scene
 
             heldObjRB.transform.parent = holdArea;
             heldObj = obj;
@@ -37,6 +38,7 @@ public class PickupScript : MonoBehaviour
             heldObjRB.useGravity = true;//prevents object from falling
             heldObjRB.linearDamping = 1;
             heldObjRB.constraints = RigidbodyConstraints.None;//prevents object form rotation
+            heldObjRB.isKinematic = false;
 
             heldObjRB.transform.parent = null;//unfreeze transformations
             heldObj = null;

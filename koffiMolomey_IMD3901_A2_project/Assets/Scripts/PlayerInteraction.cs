@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,12 +11,14 @@ public class PlayerInteraction : MonoBehaviour
     //Picking Up objects
     [SerializeField] Transform holdArea;
     [SerializeField] private float pickupForce = 155.0f;
-    private GameObject heldObj;
+    [SerializeField] private GameObject heldObj;
     private Rigidbody heldObjRB;
 
+   public SeedSpawner spawn;
 
 
-    PickupScript pickup;
+    //PickupScript pickup;
+
 
     // Update is called once per frame
     void Update()
@@ -28,44 +31,37 @@ public class PlayerInteraction : MonoBehaviour
             if (hit.collider.CompareTag("Interactable"))//if collider has hit an object with interactble tag
             {
                 crossHairUIScript.SetInteract(true);//calling to create rollover effect
-
-
+                
                     if (Keyboard.current.eKey.wasPressedThisFrame)//press e to grab and drop object
                     {
 
-                    //if (pickup.heldObj == null)//if hand is empty
-                    //{
+                    //spawn.SpawnSeed();
 
 
+
+                    if (heldObj == null)//if hand is empty
+                    {
                         //pickup object
-
-                        //PickupScript pickup = gameObject.GetComponent<PickupScript>();//get pickup script
                         PickupObject(hit.transform.gameObject);//call pickup fucntion
 
-                    //}
+
+                    }
 
 
-                    //else
-                    //{
-                    //    //Drop object
-                    //    //PickupScript pickup = gameObject.GetComponent<PickupScript>();//get pickup script
-                    //    pickup.DropObject();//call drop function
+                    else//if hand is not empty
+                    {
+                        //Drop object
+                        DropObject();//call drop function
 
-                    //}
+                    }
 
-                    //if (pickup.heldObj != null)
-                    //{
-                    //    //moveObject
-                    //    //PickupScript pickup = gameObject.GetComponent<PickupScript>();//get pickup script
-                    //    pickup.MoveObject();//call drop function
-                    //}
+                    if (heldObj != null)
+                    {
+                        //moveObject
+                        MoveObject();//call drop function
+                    }
 
                 }
-
-                    
-                
-
-               
 
                 return;
             }
@@ -78,20 +74,21 @@ public class PlayerInteraction : MonoBehaviour
 
 
 
-
+    //Fucntions to pickup, move and drop objects
 
     public void PickupObject(GameObject obj)
     {
         if (obj.GetComponent<Rigidbody>())
         {
+
             heldObjRB = obj.GetComponent<Rigidbody>();
             heldObjRB.useGravity = false;//prevents object from falling
             heldObjRB.linearDamping = 10;
             heldObjRB.constraints = RigidbodyConstraints.FreezeRotation;//prevents object form rotation
             heldObjRB.isKinematic = true;//prevents object from moving when hitting other objects in the scene
             heldObjRB.transform.parent = holdArea;//parent object to camera space so it can follow the camera
-
             heldObj = obj;
+           
         }
 
 
@@ -109,7 +106,7 @@ public class PlayerInteraction : MonoBehaviour
         heldObjRB.isKinematic = false;
 
         heldObjRB.transform.parent = null;//unfreeze transformations
-        heldObj = null;
+        heldObj = null;//hand is now empty
 
 
 

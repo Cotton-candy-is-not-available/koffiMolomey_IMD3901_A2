@@ -149,3 +149,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55922348bce2a0c4484835861981f473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cropSpawner: {fileID: 0}
+  cropPrefab: {fileID: 4766600140004167790, guid: 114785d02c4fe054d8a21dbf4129216d, type: 3}

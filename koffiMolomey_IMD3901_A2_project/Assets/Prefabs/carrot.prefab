@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 1884852403962868659}
   - component: {fileID: 4245820047220772065}
   m_Layer: 0
-  m_Name: crop
-  m_TagString: Untagged
+  m_Name: carrot
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

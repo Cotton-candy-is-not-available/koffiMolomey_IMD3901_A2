@@ -87,6 +87,7 @@ public class PlayerInteraction : MonoBehaviour
             heldObjRB.constraints = RigidbodyConstraints.FreezeRotation;//prevents object form rotation
             heldObjRB.isKinematic = true;//prevents object from moving when hitting other objects in the scene
             heldObjRB.transform.parent = holdArea;//parent object to camera space so it can follow the camera
+            heldObjRB.transform.position = holdArea.position;//move object to hold area positon
             heldObj = obj;
            
         }

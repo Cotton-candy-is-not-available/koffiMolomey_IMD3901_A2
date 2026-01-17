@@ -4,8 +4,8 @@ public class PickupScript : MonoBehaviour
 {
 
     [SerializeField] Transform holdArea;
-    private GameObject heldObj;
-    private Rigidbody heldObjRB;
+    public GameObject heldObj;
+    public Rigidbody heldObjRB;
 
 
     [SerializeField] private float pickupForce = 155.0f;
@@ -22,8 +22,8 @@ public class PickupScript : MonoBehaviour
             heldObjRB.linearDamping = 10;
             heldObjRB.constraints = RigidbodyConstraints.FreezeRotation;//prevents object form rotation
             heldObjRB.isKinematic = true;//prevents object from moving when hitting other objects in the scene
-
-            heldObjRB.transform.parent = holdArea;
+            heldObjRB.transform.parent = holdArea;//parent object to camera space so it can follow the camera
+            heldObjRB.transform.position = holdArea.position;//move object to hold area positon
             heldObj = obj;
         }
 
@@ -34,15 +34,16 @@ public class PickupScript : MonoBehaviour
 
     public void DropObject()
     {
-       
-            heldObjRB.useGravity = true;//prevents object from falling
-            heldObjRB.linearDamping = 1;
-            heldObjRB.constraints = RigidbodyConstraints.None;//prevents object form rotation
-            heldObjRB.isKinematic = false;
 
-            heldObjRB.transform.parent = null;//unfreeze transformations
-            heldObj = null;
-     
+        heldObjRB.useGravity = true;//prevents object from falling
+        heldObjRB.linearDamping = 1;
+        heldObjRB.constraints = RigidbodyConstraints.None;//prevents object form rotation
+
+        heldObjRB.isKinematic = false;
+
+        heldObjRB.transform.parent = null;//unfreeze transformations
+        heldObj = null;//hand is now empty
+
 
 
     }

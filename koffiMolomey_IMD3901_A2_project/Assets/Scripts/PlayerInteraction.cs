@@ -27,9 +27,6 @@ public class PlayerInteraction : MonoBehaviour
                     if (Keyboard.current.eKey.wasPressedThisFrame)//press e to grab and drop object
                     {
 
-                    //spawn.SpawnSeed();
-
-
 
                     if (pickup.heldObj == null)//if hand is empty
                     {

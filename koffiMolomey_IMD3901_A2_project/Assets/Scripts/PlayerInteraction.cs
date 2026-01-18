@@ -35,7 +35,7 @@ public class PlayerInteraction : MonoBehaviour
                     {
                         //pickup object
                         pickup.PickupObject(hit.transform.gameObject);//call pickup fucntion
-
+                        //SoundFXManager.Instance.PickupSFX();//play pickup sfx
 
                     }
 

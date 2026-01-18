@@ -12,7 +12,6 @@ public class PickupScript : MonoBehaviour
 
 
 
-
     public void PickupObject(GameObject obj)
     {
         if(obj.GetComponent<Rigidbody>())

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Interactable
   - Dirt
+  - PlantManager
   layers:
   - Default
   - TransparentFX

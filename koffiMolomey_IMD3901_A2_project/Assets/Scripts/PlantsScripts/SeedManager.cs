@@ -3,10 +3,17 @@ using UnityEngine;
 public class SeedManager : MonoBehaviour
 {
    //public Vector3 lastPosition;
-  public CropSpawner cropSpawner;//make access on creation
+  public GameObject plantManager;//make access on creation
+  CropSpawner cropSpawner;
 
     //crop that we want to plant
     public GameObject cropPrefab;
+
+     void Start()
+    {
+        plantManager = GameObject.FindGameObjectWithTag("PlantManager");
+        cropSpawner = plantManager.GetComponent<CropSpawner>();
+    }
 
 
     void OnCollisionStay(Collision collision)

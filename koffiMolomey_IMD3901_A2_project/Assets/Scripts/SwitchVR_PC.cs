@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,6 +9,8 @@ public class SwitchVR_PC : MonoBehaviour
 
    public Transform VRPlayerPos;
    public Transform PCPlayerPos;
+
+    public TextMeshProUGUI ToggleText;
 
 
     [SerializeField] bool toggle;
@@ -30,20 +33,29 @@ public class SwitchVR_PC : MonoBehaviour
 
         if (toggle == true)//Turn on VR mode
         {
-            VRObjects.SetActive(true);
-            PCObjects.SetActive(false);
 
             //set VR PLayer to same position as PC Player
             VRPlayerPos = PCPlayerPos;
+
+            //Change text to view which mode user is in
+            ToggleText.GetComponent<TextMeshProUGUI>().text = "VR mode";
+
+            VRObjects.SetActive(true);
+            PCObjects.SetActive(false);
+
         }
 
         else if (toggle == false)//Turn on PC mode
         {
+            //set VR PLayer to same position as PC Player
+            PCPlayerPos = VRPlayerPos;
+
+            ToggleText.GetComponent<TextMeshProUGUI>().text = "PC mode";
+
             VRObjects.SetActive(false);
             PCObjects.SetActive(true);
 
-            //set VR PLayer to same position as PC Player
-            PCPlayerPos = VRPlayerPos;
+            
         }
     }
 }

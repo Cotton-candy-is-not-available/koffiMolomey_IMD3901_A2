@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7192177787626240652}
   - component: {fileID: 7921106882715754025}
   m_Layer: 0
-  m_Name: Props_Bench
+  m_Name: Table
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

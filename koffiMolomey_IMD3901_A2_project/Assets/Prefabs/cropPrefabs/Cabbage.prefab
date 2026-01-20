@@ -205,7 +205,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8554979865546078707}
   - component: {fileID: 2506295404697276759}
-  - component: {fileID: -1919817660730088715}
   - component: {fileID: -4421282387395650628}
   m_Layer: 3
   m_Name: Cabbage
@@ -254,27 +253,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 8446973881879383255}
   m_Enabled: 1
---- !u!65 &-1919817660730088715
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8554979865545778643}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 0.51745474, y: 0.36804384, z: 0.5267631}
-  m_Center: {x: -0.016810894, y: 0.1915611, z: 0.026205897}
 --- !u!54 &-4421282387395650628
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -6,7 +6,17 @@ public class SwitchVR_PC : MonoBehaviour
    public  GameObject VRObjects;
    public  GameObject PCObjects;
 
-    [SerializeField] bool toggle = false;
+   public Transform VRPlayerPos;
+   public Transform PCPlayerPos;
+
+
+    [SerializeField] bool toggle;
+
+    private void Start()
+    {
+        toggle = false;
+
+    }
 
     // Update is called once per frame
     void Update()
@@ -22,12 +32,18 @@ public class SwitchVR_PC : MonoBehaviour
         {
             VRObjects.SetActive(true);
             PCObjects.SetActive(false);
+
+            //set VR PLayer to same position as PC Player
+            VRPlayerPos = PCPlayerPos;
         }
 
         else if (toggle == false)//Turn on PC mode
         {
             VRObjects.SetActive(false);
             PCObjects.SetActive(true);
+
+            //set VR PLayer to same position as PC Player
+            PCPlayerPos = VRPlayerPos;
         }
     }
 }

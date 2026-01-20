@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 63139834a25a0554ea99aae0c3694d5d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.7963395
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 63139834a25a0554ea99aae0c3694d5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -51,10 +55,10 @@ PrefabInstance:
     - target: {fileID: -6975767077441739495, guid: 63139834a25a0554ea99aae0c3694d5d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 24243520229997b46bb8869b65a961e0, type: 2}
+      objectReference: {fileID: 2100000, guid: d8906473b3a330c4ea7b474b7cdf79c0, type: 2}
     - target: {fileID: 919132149155446097, guid: 63139834a25a0554ea99aae0c3694d5d, type: 3}
       propertyPath: m_Name
-      value: carrotSeed
+      value: pumkinSeed
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 63139834a25a0554ea99aae0c3694d5d, type: 3}
       propertyPath: m_Layer
@@ -161,4 +165,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantManager: {fileID: 0}
-  cropPrefab: {fileID: 8427680565315531034, guid: 114785d02c4fe054d8a21dbf4129216d, type: 3}
+  cropPrefab: {fileID: 831293913171097625, guid: 7dbceceaccb982d4fafcc425837258a2, type: 3}

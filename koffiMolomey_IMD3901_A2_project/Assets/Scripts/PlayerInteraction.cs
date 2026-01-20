@@ -22,6 +22,8 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (hit.collider.CompareTag("Interactable"))//if collider has hit an object with interactble tag
             {
+
+
                 crossHairUIScript.SetInteract(true);//calling to create rollover effect
                 
                     if (Keyboard.current.eKey.wasPressedThisFrame)//press e to grab and drop object

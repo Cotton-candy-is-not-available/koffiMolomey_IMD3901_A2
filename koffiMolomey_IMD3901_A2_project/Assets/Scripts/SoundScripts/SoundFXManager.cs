@@ -2,7 +2,21 @@ using UnityEngine;
 
 public class SoundFXManager : MonoBehaviour
 {
+    [Header("Audio Source------")]
+
+    [SerializeField] AudioSource bgMusicSource;
+    [SerializeField] AudioSource SFXSource;
+
+
+    [Header("Audio Source------")]
+    public AudioClip pickupSFX;
+
+
+
     public static SoundFXManager Instance;
+
+
+
 
     private void Awake()
     {
@@ -12,11 +26,17 @@ public class SoundFXManager : MonoBehaviour
         }
     }
 
-
-    public void PickupSFX(AudioClip clip)
+    public void Start()
     {
-        
+        //Play bg music
     }
+
+
+    public void PlaySFX(AudioClip audioClip)
+    {
+        SFXSource.PlayOneShot(audioClip);
+    }
+
 
 
 }

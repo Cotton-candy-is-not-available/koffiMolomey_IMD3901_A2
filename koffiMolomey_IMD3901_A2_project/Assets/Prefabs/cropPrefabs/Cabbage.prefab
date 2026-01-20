@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 731027722251266061}
   - component: {fileID: 6158966759161390522}
   - component: {fileID: 8446973881879383255}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cabbage_01_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 8712997190725166366}
   - component: {fileID: 8373419051993004191}
   - component: {fileID: 5723314326139808742}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cabbage_01_LOD0
   m_TagString: Interactable
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: 2506295404697276759}
   - component: {fileID: -1919817660730088715}
   - component: {fileID: -4421282387395650628}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cabbage
   m_TagString: Interactable
   m_Icon: {fileID: 0}

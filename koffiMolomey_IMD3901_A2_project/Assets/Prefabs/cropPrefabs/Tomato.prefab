@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3924147679725037070}
   - component: {fileID: 7487456116394265693}
   - component: {fileID: 5465040929928713008}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tomato_03_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 1919976566651885523}
   - component: {fileID: 8708512267373442074}
   - component: {fileID: 720977957349680984}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tomato_03_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: 4734468584403736855}
   - component: {fileID: 6318667094771723108}
   - component: {fileID: 2319236231225548970}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tomato
   m_TagString: Interactable
   m_Icon: {fileID: 0}

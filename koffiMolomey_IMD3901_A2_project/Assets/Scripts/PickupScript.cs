@@ -14,12 +14,13 @@ public class PickupScript : MonoBehaviour
 
     public void PickupObject(GameObject obj)
     {
-        if(obj.GetComponent<Rigidbody>())
+            if (obj.GetComponent<Rigidbody>())
         {
+            SoundFXManager.Instance.PlaySFX(SoundFXManager.Instance.pickupSFX);
             heldObjRB = obj.GetComponent<Rigidbody>();
             heldObjRB.useGravity = false;//prevents object from falling
             heldObjRB.linearDamping = 10;
-            heldObjRB.constraints = RigidbodyConstraints.FreezeRotation;//prevents object form rotation
+            heldObjRB.constraints = RigidbodyConstraints.FreezeRotation;//prevents object from rotating
             heldObjRB.isKinematic = true;//prevents object from moving when hitting other objects in the scene
             heldObjRB.transform.parent = holdArea;//parent object to camera space so it can follow the camera
             heldObjRB.transform.position = holdArea.position;//move object to hold area positon

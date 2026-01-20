@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
 
     float xRotation = 0f;
 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,7 +25,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log("Scene has been updated!");
+        
         //--------------- Moving Character --------------
         Vector2 moveInput = Keyboard.current != null ? new Vector2
             (

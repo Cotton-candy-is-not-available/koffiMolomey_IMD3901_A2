@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 63bcfb7683c87d349b8c4b0324578d2a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 13.52562
+      value: 17.031654
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 63bcfb7683c87d349b8c4b0324578d2a, type: 3}
       propertyPath: m_LocalScale.z
@@ -63,10 +63,10 @@ PrefabInstance:
     - target: {fileID: -6762874864977187057, guid: 63bcfb7683c87d349b8c4b0324578d2a, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 7081dd5f340f29847ab2b061610fb7d7, type: 2}
+      objectReference: {fileID: 2100000, guid: ead253830af6e994a953e56b7c6e7440, type: 2}
     - target: {fileID: 919132149155446097, guid: 63bcfb7683c87d349b8c4b0324578d2a, type: 3}
       propertyPath: m_Name
-      value: cabbageSeed
+      value: radishSeed
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 63bcfb7683c87d349b8c4b0324578d2a, type: 3}
       propertyPath: m_Layer
@@ -173,4 +173,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantManager: {fileID: 0}
-  cropPrefab: {fileID: 8554979865545778643, guid: aec8969d0290c6d4cbc587ef85a01ce4, type: 3}
+  cropPrefab: {fileID: 3648508306792511377, guid: 8f5e8555e76458a4a88eb1e8390ba809, type: 3}

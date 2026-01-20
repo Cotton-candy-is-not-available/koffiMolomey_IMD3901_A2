@@ -7,14 +7,15 @@ TagManager:
   - Interactable
   - Dirt
   - PlantManager
+  - Leaf
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - ClipThrough
   - Water
   - UI
-  - PickupLayer
+  - Player
   - 
   - 
   - 

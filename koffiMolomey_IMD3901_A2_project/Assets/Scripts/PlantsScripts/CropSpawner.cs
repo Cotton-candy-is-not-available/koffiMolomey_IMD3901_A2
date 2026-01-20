@@ -14,7 +14,7 @@ public class CropSpawner : MonoBehaviour
 
     public void SpawCrop(GameObject cropPrefab)
     {
-        Instantiate(cropPrefab, lastPosition, Quaternion.identity);
+        Instantiate(cropPrefab, lastPosition, cropPrefab.transform.rotation);
     }
 
 

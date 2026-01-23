@@ -11,7 +11,6 @@ public class PlayerInteraction : MonoBehaviour
 
 
    public PickupScript pickup ;
-
     // Update is called once per frame
     void Update()
     {

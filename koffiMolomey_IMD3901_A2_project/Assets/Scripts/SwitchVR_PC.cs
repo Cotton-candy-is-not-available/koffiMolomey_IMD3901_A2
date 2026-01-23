@@ -10,10 +10,11 @@ public class SwitchVR_PC : MonoBehaviour
    public Transform VRPlayerPos;
    public Transform PCPlayerPos;
 
-    public TextMeshProUGUI ToggleText;
+   public GameObject crossHair;
 
+   public TextMeshProUGUI ToggleText;
 
-    [SerializeField] bool toggle;
+   [SerializeField] bool toggle;
 
     private void Start()
     {
@@ -40,8 +41,11 @@ public class SwitchVR_PC : MonoBehaviour
             //Change text to view which mode user is in
             ToggleText.GetComponent<TextMeshProUGUI>().text = "VR mode";
 
-            VRObjects.SetActive(true);
-            PCObjects.SetActive(false);
+            VRObjects.SetActive(true);//activate VR hands and controls
+
+            PCObjects.SetActive(false);//turn OFF PC controls
+            crossHair.SetActive(false);//turn ON crossHair
+
 
         }
 
@@ -52,10 +56,13 @@ public class SwitchVR_PC : MonoBehaviour
 
             ToggleText.GetComponent<TextMeshProUGUI>().text = "PC mode";
 
-            VRObjects.SetActive(false);
-            PCObjects.SetActive(true);
+            VRObjects.SetActive(false);//deactivate VR hands and controls
 
-            
+            PCObjects.SetActive(true);//turn ON PC controls
+            crossHair.SetActive(true);//turn ON crossHair
+
+
+
         }
     }
 }

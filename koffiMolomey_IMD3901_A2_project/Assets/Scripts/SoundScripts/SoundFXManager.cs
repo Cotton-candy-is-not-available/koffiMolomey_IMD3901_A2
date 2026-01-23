@@ -2,13 +2,18 @@ using UnityEngine;
 
 public class SoundFXManager : MonoBehaviour
 {
-    [Header("Audio Source------")]
+    [Header("-------Audio Source------")]
 
     [SerializeField] AudioSource bgMusicSource;
     [SerializeField] AudioSource SFXSource;
 
 
-    [Header("Audio Source------")]
+    [Header("-------Background Music Clips------")]
+    public AudioClip BGMusic1;
+    public AudioClip BGMusic2;
+
+
+    [Header("-------SFX Clips------")]
     public AudioClip pickupSFX;
 
 
@@ -29,6 +34,8 @@ public class SoundFXManager : MonoBehaviour
     public void Start()
     {
         //Play bg music
+        bgMusicSource.PlayOneShot(BGMusic2);
+
     }
 
 

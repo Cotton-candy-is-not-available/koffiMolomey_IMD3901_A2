@@ -4,13 +4,15 @@ using UnityEngine.InputSystem;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    public float interactRange = 5.0f;//range of camera ray
+    public float interactRange = 4.0f;//range of camera ray
     public Camera PlayerCamera;
     public CrossHairUI crossHairUIScript;
-   //public SeedSpawner spawn;
+    public PopUpIntructions ePickupPrompt;
+
+    //public SeedSpawner spawn;
 
 
-   public PickupScript pickup ;
+    public PickupScript pickup ;
     // Update is called once per frame
     void Update()
     {
@@ -21,14 +23,13 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (hit.collider.CompareTag("Interactable"))//if collider has hit an object with interactble tag
             {
+                 crossHairUIScript.SetInteract(true);//calling to create rollover effect
+
+                ePickupPrompt.eToInteractOnOff(true);//turn ON e to interact prompt
 
 
-                crossHairUIScript.SetInteract(true);//calling to create rollover effect
-                
-                    if (Keyboard.current.eKey.wasPressedThisFrame)//press e to grab and drop object
+                if (Keyboard.current.eKey.wasPressedThisFrame)//press e to grab and drop object
                     {
-
-
                     if (pickup.heldObj == null)//if hand is empty
                     {
                         //pickup object
@@ -55,6 +56,12 @@ public class PlayerInteraction : MonoBehaviour
 
                 return;
             }
+            else
+            {
+                ePickupPrompt.eToInteractOnOff(false);//turn OFF e to interact prompt
+
+            }
+
         }
 
         crossHairUIScript.SetInteract(false);

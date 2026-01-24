@@ -18,9 +18,10 @@ public class SeedManager : MonoBehaviour
 
     void OnCollisionStay(Collision collision)
     {
-        Debug.Log("collision");
         if (collision.gameObject.tag == "Dirt")//if it collides with the dirt
             {
+            Debug.Log("Planted");
+
             cropSpawner.lastPosition = gameObject.transform.position ;//spawn plant here
 
             Debug.Log("last positon of seed: "+ cropSpawner.lastPosition);

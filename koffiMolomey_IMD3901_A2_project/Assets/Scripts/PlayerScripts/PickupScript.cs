@@ -22,7 +22,10 @@ public class PickupScript : MonoBehaviour
             heldObjRB = obj.GetComponent<Rigidbody>();
             heldObjRB.useGravity = false;//prevents object from falling
             heldObjRB.linearDamping = 10;
-            heldObjRB.constraints = RigidbodyConstraints.FreezeRotation;//prevents object from rotating
+            //heldObjRB.constraints = RigidbodyConstraints.FreezeRotation;//prevents object from rotating
+            heldObjRB.constraints = RigidbodyConstraints.FreezeRotationY;//prevents object from rotating
+            heldObjRB.constraints = RigidbodyConstraints.FreezeRotationZ;//prevents object from rotating
+
             heldObjRB.isKinematic = true;//prevents object from moving when hitting other objects in the scene
 
             heldObjRB.transform.parent = holdArea;//parent object to camera space so it can follow the camera
@@ -33,7 +36,7 @@ public class PickupScript : MonoBehaviour
 
             heldObj = obj;
 
-            heldObj.transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);//rotation in degrees
+            //heldObj.transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);//rotation in degrees
         }
 
 
@@ -68,11 +71,6 @@ public class PickupScript : MonoBehaviour
             Vector3 moveDirection = (holdArea.position - heldObj.transform.position);
             heldObjRB.AddForce(moveDirection * pickupForce);
         }
-    }
-
-    public void PourWater()
-    {
-
     }
 
 

@@ -27,20 +27,6 @@ public class PlayerInteraction : MonoBehaviour
 
                 ePickupPrompt.eToInteractOnOff(true);//turn ON e to interact prompt
 
-                //---------------------------------------------------------------//
-                //rotate function
-                if (pickup.heldObj != null)//if hand is empty
-                {
-                    if (Keyboard.current.rKey.isPressed)//Hold R key to rotate object
-                    {
-                        //Debug.Log("Rotate");
-                        PourScript pouring = hit.collider.GetComponent<PourScript>();
-                        pouring.Rotate();
-
-                    }
-                }
-//---------------------------------------------------------------//
-
 
                 if (Keyboard.current.eKey.wasPressedThisFrame)//press e to grab and drop object
                     {
@@ -48,12 +34,6 @@ public class PlayerInteraction : MonoBehaviour
                     {
                         //pickup object
                         pickup.PickupObject(hit.transform.gameObject);//call pickup fucntion
-                       
-                        //if (Keyboard.current.rKey.wasPressedThisFrame)//press R to rotate object
-                        //{
-                        //    Debug.Log("Rotate");
-                        //    hit.transform.gameObject.transform.Rotate(90.0f, 0.0f, 0.0f, Space.Self);//rotate object  90degrees on objects x axis
-                        //}
 
                     }
 
@@ -65,12 +45,34 @@ public class PlayerInteraction : MonoBehaviour
 
                     }
 
-                    if (pickup.heldObj != null)
+                    if (pickup.heldObj != null)//if there is an object picked up
                     {
                         //moveObject
                         pickup.MoveObject();//call drop function
                     }
 
+                }
+
+                 //Watering function 
+                if (pickup.heldObj != null)//if hand is empty
+                {
+                    if (hit.collider.GetComponent<PourScript>())
+                    {
+                        if (Keyboard.current.rKey.isPressed)//Hold R key to rotate object
+                        {
+                            //Allow water to pour if watering can
+                            PourScript pouring = hit.collider.GetComponent<PourScript>();
+                            pouring.Pouring();
+
+
+                        }
+                        else
+                        {
+                            //Stop water from pouring
+                            PourScript pouring = hit.collider.GetComponent<PourScript>();
+                            pouring.StopPouring();
+                        }
+                    }
                 }
 
                 return;

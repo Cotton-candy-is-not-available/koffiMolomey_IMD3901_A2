@@ -10,13 +10,20 @@ public class PourScript : MonoBehaviour
 
     public GameObject water;
 
+    // ------ PC variables --------------
     [SerializeField] float targetAngle = 0.01f;
 
     [SerializeField] float speed = 1.0f;
 
     [SerializeField] float rotationProgress;
-    [SerializeField] Quaternion startRotation;
-    [SerializeField] Quaternion endRotation;
+    [SerializeField] Quaternion PCStartRotation;
+    [SerializeField] Quaternion PCEndRotation;
+
+    // ------ VR variables --------------
+
+    [SerializeField] float VRStartRotation = 1.0f;
+
+    public GameObject VRObject;
 
 
     private void Start()
@@ -25,6 +32,13 @@ public class PourScript : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        if (VRObject.activeSelf)//allow for pouring when VR mode is on
+        {
+            VRPouring();
+        }
+    }
 
 
     public void Pouring()
@@ -34,48 +48,46 @@ public class PourScript : MonoBehaviour
         {
             rotationProgress += Time.deltaTime * 5;
 
-            transform.rotation = Quaternion.Lerp(startRotation, endRotation, rotationProgress);//rotates watering can smoothly
+            transform.rotation = Quaternion.Lerp(PCStartRotation, PCEndRotation, rotationProgress);//rotates watering can smoothly
 
             water.SetActive(true);//turn on water particles
         }
 
-
-
-        //transform.localRotation = Quaternion.identity;
-
-        //Debug.Log("pour" + transform.localRotation.x);
-
-        //    if (transform.localRotation.x >= targetAngle)
-        //    {
-
-        //        //stay at this position
-        //        //start particles
-        //        Debug.Log("at position");
-        //    }
-        //    else
-        //    {
-        //    Quaternion.Lerp(transform.rotation, xRotationAxis, Time.time * speed);
-
-        //    //transform.Rotate(xRotationAxis, speed);//rotates watering can till reaches pouring angle
-
-        //}
-
-
     }
 
+    public void VRPouring()
+    {
+        transform.localRotation = Quaternion.identity;//set begining rotation to parent
+
+        if (transform.rotation.x>=VRStartRotation)
+        {
+            Debug.Log("POUR");
+
+            water.SetActive(true);//turn on water particles
+
+        }
+        else if (transform.rotation.y<=VRStartRotation)
+        {
+            Debug.Log("NOT POUR");
+            Debug.Log("POtransform.rotation.xUR" + transform.rotation.x);
+
+            water.SetActive(false);//turn OFF water particles
+
+        }
+    }
 
     public void StopPouring()
     {
 
         transform.localRotation = Quaternion.identity;//set begining rotation to parent
 
-        startRotation = transform.rotation;//default rotation
+        PCStartRotation = transform.rotation;//default rotation
 
-        endRotation = Quaternion.Euler(90.0f, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+        PCEndRotation = Quaternion.Euler(90.0f, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
 
         rotationProgress = 0;
 
-        if(transform.rotation == startRotation)
+        if(transform.rotation == PCStartRotation)
         {
             Debug.Log("stop");
             water.SetActive(false);//turn off water particles

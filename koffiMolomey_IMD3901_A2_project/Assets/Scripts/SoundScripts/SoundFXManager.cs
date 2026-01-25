@@ -34,7 +34,8 @@ public class SoundFXManager : MonoBehaviour
     public void Start()
     {
         //Play bg music
-        bgMusicSource.PlayOneShot(BGMusic2);
+        bgMusicSource.clip = BGMusic1;
+        bgMusicSource.Play();
 
     }
 

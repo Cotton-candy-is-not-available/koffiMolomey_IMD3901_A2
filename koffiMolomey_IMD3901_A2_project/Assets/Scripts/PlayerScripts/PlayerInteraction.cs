@@ -36,24 +36,26 @@ public class PlayerInteraction : MonoBehaviour
                         pickup.PickupObject(hit.transform.gameObject);//call pickup fucntion
 
                     }
-
-
                     else//if hand is not empty
                     {
                         //Drop object
                         pickup.DropObject();//call drop function
 
-                    }
-
-                    if (pickup.heldObj != null)//if there is an object picked up
-                    {
-                        //moveObject
-                        pickup.MoveObject();//call drop function
-                    }
+                    }    
 
                 }
+                if (pickup.heldObj != null)//if there is an object picked up
+                {
+                    //moveObject
+                    pickup.MoveObject();//call move function
 
-                 //Watering function 
+                    if (Mouse.current.leftButton.wasPressedThisFrame)
+                    {
+                        pickup.ThrowObject();//call move function
+                    }
+                }
+
+                //Watering function 
                 if (pickup.heldObj != null)//if hand is empty
                 {
                     if (hit.collider.GetComponent<PourScript>())

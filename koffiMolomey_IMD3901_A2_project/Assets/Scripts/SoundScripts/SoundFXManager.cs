@@ -15,6 +15,9 @@ public class SoundFXManager : MonoBehaviour
 
     [Header("-------SFX Clips------")]
     public AudioClip pickupSFX;
+    public AudioClip throwSFX;
+    public AudioClip createCropSFX;
+    public AudioClip touchFloor;
 
 
 

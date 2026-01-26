@@ -1341,7 +1341,7 @@
                     "name": "Grab Move",
                     "type": "Button",
                     "id": "c5a6d766-d487-42ae-b293-da4749469e18",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -2546,7 +2546,7 @@
                     "name": "Submit",
                     "type": "Button",
                     "id": "eba98c2e-6268-4233-bb88-946287bc753c",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -2555,7 +2555,7 @@
                     "name": "Cancel",
                     "type": "Button",
                     "id": "448b396b-0885-4543-ac5a-8b3405da6791",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -2571,9 +2571,9 @@
                 },
                 {
                     "name": "Click",
-                    "type": "PassThrough",
-                    "id": "b194cd98-7e4f-457a-a60c-cebc25dc32a2",
-                    "expectedControlType": "Button",
+                    "type": "Button",
+                    "id": "01e9acaa-a3f9-425d-a4c8-4fcf90acb596",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -2637,28 +2637,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Point",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "57909bb4-1088-4975-9227-ecc87a305257",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Click",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2740386d-d4b6-4342-903c-d9390783f04a",
-                    "path": "<Pen>/tip",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -2983,7 +2961,29 @@
                 },
                 {
                     "name": "",
-                    "id": "198e6869-709e-448d-96d4-27186c9d56e6",
+                    "id": "e1e03a91-d6cd-4ff3-8767-360612d306aa",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b929d120-e8d3-4aea-be4c-41caf83f4989",
+                    "path": "<Pen>/tip",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6f0b2f31-6aa3-4058-995b-538cc96f6042",
                     "path": "<Touchscreen>/Press",
                     "interactions": "",
                     "processors": "",

@@ -20,16 +20,20 @@ public class SeedManager : MonoBehaviour
     {
         if (collision.gameObject.tag == "Dirt")//if it collides with the dirt
             {
-            Debug.Log("Planted");
+
+            //Debug.Log("Planted");
 
             cropSpawner.lastPosition = gameObject.transform.position ;//spawn plant here
 
-            Debug.Log("last positon of seed: "+ cropSpawner.lastPosition);
+            //Debug.Log("last positon of seed: "+ cropSpawner.lastPosition);
 
             cropSpawner.SpawCrop(cropPrefab);//spawn respective crop
-            // destroy this object
+            SoundFXManager.Instance.PlaySFX(SoundFXManager.Instance.createCropSFX);//play createCropSFX SFX
+
+            cropPrefab.GetComponent<Rigidbody>().isKinematic = true;//stop crob from bouncing on creation
+            // destroy this seed
             Destroy(gameObject);
-            }
+        }
         
     }
 

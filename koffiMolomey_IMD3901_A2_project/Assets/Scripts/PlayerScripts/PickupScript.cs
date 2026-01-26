@@ -8,7 +8,9 @@ public class PickupScript : MonoBehaviour
     public Rigidbody heldObjRB;
 
     [SerializeField] private float pickupForce = 155.0f;
+    public float throwForce = 500f;//force object can be thrown at
 
+    //picked up and normal scales
     float defaultScale = 1f;
     float smallScale = 0.5f;
 
@@ -19,6 +21,7 @@ public class PickupScript : MonoBehaviour
             if (obj.GetComponent<Rigidbody>())
         {
             SoundFXManager.Instance.PlaySFX(SoundFXManager.Instance.pickupSFX);//play pickup SFX
+
             heldObjRB = obj.GetComponent<Rigidbody>();
             heldObjRB.useGravity = false;//prevents object from falling
             heldObjRB.linearDamping = 10;
@@ -48,7 +51,7 @@ public class PickupScript : MonoBehaviour
     {
         heldObjRB.useGravity = true;//let the item fall
         heldObjRB.linearDamping = 1;
-        heldObjRB.constraints = RigidbodyConstraints.None;//prevents object form rotation
+        heldObjRB.constraints = RigidbodyConstraints.None;//prevents object rotation
 
         heldObjRB.isKinematic = false;
 
@@ -59,9 +62,30 @@ public class PickupScript : MonoBehaviour
 
         heldObj = null;//hand is now empty
 
+    }
+
+
+    public void ThrowObject()
+    {
+        SoundFXManager.Instance.PlaySFX(SoundFXManager.Instance.throwSFX);//play throw SFX
+
+        heldObjRB.useGravity = true;//let the item fall
+        heldObjRB.linearDamping = 1;
+        heldObjRB.constraints = RigidbodyConstraints.None;// object can rotate again
+
+        heldObjRB.isKinematic = false;
+
+        holdArea.transform.localScale = new Vector3(defaultScale, defaultScale, defaultScale); ;//bring hold area and heldObj back to original size for the next object
+
+        heldObjRB.transform.parent = null;//unfreeze transformations and unparent
+
+        heldObjRB.AddForce(transform.forward * throwForce);//throws object when dropped and unparented
+
+        heldObj = null;//hand is now empty
 
 
     }
+
 
 
     public void MoveObject()

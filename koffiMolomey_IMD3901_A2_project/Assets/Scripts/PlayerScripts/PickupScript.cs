@@ -20,7 +20,7 @@ public class PickupScript : MonoBehaviour
     {
             if (obj.GetComponent<Rigidbody>())
         {
-            SoundFXManager.Instance.PlaySFX(SoundFXManager.Instance.pickupSFX);//play pickup SFX
+            SoundManager.Instance.PlaySFX(SoundManager.Instance.pickupSFX);//play pickup SFX
 
             heldObjRB = obj.GetComponent<Rigidbody>();
             heldObjRB.useGravity = false;//prevents object from falling
@@ -67,7 +67,7 @@ public class PickupScript : MonoBehaviour
 
     public void ThrowObject()
     {
-        SoundFXManager.Instance.PlaySFX(SoundFXManager.Instance.throwSFX);//play throw SFX
+        SoundManager.Instance.PlaySFX(SoundManager.Instance.throwSFX);//play throw SFX
 
         heldObjRB.useGravity = true;//let the item fall
         heldObjRB.linearDamping = 1;

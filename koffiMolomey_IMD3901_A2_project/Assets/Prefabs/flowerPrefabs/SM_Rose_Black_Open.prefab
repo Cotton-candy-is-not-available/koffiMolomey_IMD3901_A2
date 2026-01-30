@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 282054131722097791}
   - component: {fileID: 2982501285300642334}
   - component: {fileID: 5787364061643252467}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SM_Rose_Black_Open
-  m_TagString: Untagged
+  m_TagString: Flower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,6 +122,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14173db4b228f8045af41773744f03cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Stem: {fileID: 1795514364784391594}
+  flower: {fileID: 1795514364784391594}
   increaseHeightValue: 0.1
   maxHeight: 1.4

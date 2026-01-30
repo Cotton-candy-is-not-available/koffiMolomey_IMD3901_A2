@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SoundFXManager : MonoBehaviour
+public class SoundManager : MonoBehaviour
 {
     [Header("-------Audio Source------")]
 
@@ -18,10 +18,11 @@ public class SoundFXManager : MonoBehaviour
     public AudioClip throwSFX;
     public AudioClip createCropSFX;
     public AudioClip touchFloor;
+    public AudioClip maxGrowth;
 
 
 
-    public static SoundFXManager Instance;
+    public static SoundManager Instance;
 
 
 
@@ -42,6 +43,11 @@ public class SoundFXManager : MonoBehaviour
 
     }
 
+    public void PlayBGMusic(AudioClip BGclip)
+    {
+        bgMusicSource.clip = BGclip;
+        bgMusicSource.Play();
+    }
 
     public void PlaySFX(AudioClip audioClip)
     {

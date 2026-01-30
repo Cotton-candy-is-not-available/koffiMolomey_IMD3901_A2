@@ -7,7 +7,7 @@ TagManager:
   - Interactable
   - Dirt
   - PlantManager
-  - Leaf
+  - Flower
   layers:
   - Default
   - TransparentFX
@@ -17,7 +17,7 @@ TagManager:
   - UI
   - Player
   - WateringCan
-  - 
+  - Flower
   - 
   - 
   - 

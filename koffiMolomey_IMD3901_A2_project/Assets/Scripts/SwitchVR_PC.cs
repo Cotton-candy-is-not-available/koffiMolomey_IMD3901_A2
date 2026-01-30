@@ -14,9 +14,11 @@ public class SwitchVR_PC : MonoBehaviour
 
    public TextMeshProUGUI ToggleText;
 
+    public GameObject soundSettingsCanvas;
+
    [SerializeField] bool toggle;
 
-    private void Start()
+    void Awake()
     {
         toggle = false;
 

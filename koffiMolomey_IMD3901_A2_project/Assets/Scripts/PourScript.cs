@@ -11,17 +11,13 @@ public class PourScript : MonoBehaviour
     public GameObject water;
 
     // ------ PC variables --------------
-    [SerializeField] float targetAngle = 0.01f;
-
-    [SerializeField] float speed = 1.0f;
-
     [SerializeField] float rotationProgress;
     [SerializeField] Quaternion PCStartRotation;
     [SerializeField] Quaternion PCEndRotation;
 
     // ------ VR variables --------------
 
-    [SerializeField] float VRStartRotation = 1.0f;
+    [SerializeField] float VRStartRotation = 0.03f;
 
     public GameObject VRObject;
 
@@ -37,6 +33,11 @@ public class PourScript : MonoBehaviour
         if (VRObject.activeSelf)//allow for pouring when VR mode is on
         {
             VRPouring();
+
+            //Debug.Log("transform.rotation.z " + gameObject.transform.localRotation.z);
+            //Debug.Log("transform.rotation.y " + gameObject.transform.localRotation.y);
+            //Debug.Log("transform.rotation.x " + gameObject.transform.localRotation.x);
+
         }
     }
 
@@ -57,19 +58,21 @@ public class PourScript : MonoBehaviour
 
     public void VRPouring()
     {
-        transform.localRotation = Quaternion.identity;//set begining rotation to parent
+        //gameObject.transform.localRotation = Quaternion.identity;//set begining rotation to parent
 
-        if (transform.rotation.x>=VRStartRotation)
+        if (gameObject.transform.rotation.y>=VRStartRotation)
         {
-            Debug.Log("POUR");
+            //Debug.Log("POUR");
+            Debug.Log("transform.rotation.z more " + gameObject.transform.rotation.z);
+
 
             water.SetActive(true);//turn on water particles
 
         }
-        else if (transform.rotation.y<=VRStartRotation)
+        else if (gameObject.transform.rotation.y<=VRStartRotation)
         {
-            Debug.Log("NOT POUR");
-            Debug.Log("POtransform.rotation.xUR" + transform.rotation.x);
+            //Debug.Log("NOT POUR");
+            Debug.Log("transform.rotation.z less " + gameObject.transform.rotation.z);
 
             water.SetActive(false);//turn OFF water particles
 
@@ -93,26 +96,6 @@ public class PourScript : MonoBehaviour
             water.SetActive(false);//turn off water particles
 
         }
-
-
-
-        //transform.localRotation = Quaternion.identity;
-
-        //Debug.Log("Stop" + transform.localRotation.x);
-
-        //    //stop particles
-        //    //make go back to original position
-
-        //    if (transform.localRotation.x <= startAngle.x)
-        //    {
-        //        Debug.Log("back to start");
-
-        //    }
-        //    else
-        //    {
-        //    transform.Rotate(-xRotationAxis, speed);//rotates watering to original rotation
-
-        //    }
 
 
     }

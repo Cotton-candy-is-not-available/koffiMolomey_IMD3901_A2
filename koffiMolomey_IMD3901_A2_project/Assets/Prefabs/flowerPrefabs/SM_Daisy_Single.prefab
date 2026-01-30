@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 7412382163380972121}
   - component: {fileID: 6313555916846272033}
   - component: {fileID: 5988213450061267091}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SM_Daisy_Single
-  m_TagString: Untagged
+  m_TagString: Flower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,6 +122,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14173db4b228f8045af41773744f03cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Stem: {fileID: 9069948650388196236}
+  flower: {fileID: 9069948650388196236}
   increaseHeightValue: 0.1
-  maxHeight: 1.4
+  maxHeight: 2

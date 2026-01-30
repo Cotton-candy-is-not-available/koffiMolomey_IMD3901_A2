@@ -28,13 +28,13 @@ public class SeedManager : MonoBehaviour
             //Debug.Log("last positon of seed: "+ cropSpawner.lastPosition);
 
             cropSpawner.SpawCrop(cropPrefab);//spawn respective crop
-            SoundFXManager.Instance.PlaySFX(SoundFXManager.Instance.createCropSFX);//play createCropSFX SFX
+            SoundManager.Instance.PlaySFX(SoundManager.Instance.createCropSFX);//play createCropSFX SFX
 
-            cropPrefab.GetComponent<Rigidbody>().isKinematic = true;//stop crob from bouncing on creation
+            //cropPrefab.GetComponent<Rigidbody>().isKinematic = true;//stop crop from bouncing on creation
             // destroy this seed
             Destroy(gameObject);
         }
-        
+   
     }
 
 

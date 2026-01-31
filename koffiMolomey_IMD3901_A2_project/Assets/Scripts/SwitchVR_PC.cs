@@ -24,7 +24,7 @@ public class SwitchVR_PC : MonoBehaviour
 
     void Awake()
     {
-        toggle = false;
+        toggle = true;
         PCInstructionsCanvasToggle = false;
 
     }

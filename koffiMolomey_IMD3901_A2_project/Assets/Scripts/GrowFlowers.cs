@@ -15,14 +15,14 @@ public class GrowFlowers : MonoBehaviour
         if (flower.transform.localScale.y < maxHeight)
         {
             flower.transform.localScale += new Vector3(increaseHeightValue, increaseHeightValue, increaseHeightValue);
-            Debug.Log("Growwwwwww");
+            //Debug.Log("Growwwwwww");
             //keep going until reaches max height
 
         }
         if (flower.transform.localScale.y <= maxHeight && maxReached == false)
         {
             SoundManager.Instance.PlaySFX(SoundManager.Instance.maxGrowth);
-            Debug.Log("Max reached");
+            //Debug.Log("Max reached");
             maxReached = true;
 
         }

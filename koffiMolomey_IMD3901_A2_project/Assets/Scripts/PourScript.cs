@@ -4,10 +4,6 @@ using static UnityEngine.GraphicsBuffer;
 
 public class PourScript : MonoBehaviour
 {
-
-
-    //[SerializeField] Vector3 xRotationAxis = new Vector3(90.0f,0.0f,0.0f);
-
     public GameObject water;
 
     // ------ PC variables --------------
@@ -48,7 +44,7 @@ public class PourScript : MonoBehaviour
 
         if (rotationProgress < 1 && rotationProgress >= 0)
         {
-            rotationProgress += Time.deltaTime * 5;
+            rotationProgress += Time.deltaTime * 5;//slowly rotate
 
             transform.rotation = Quaternion.Lerp(PCStartRotation, PCEndRotation, rotationProgress);//rotates watering can smoothly
 
@@ -62,19 +58,19 @@ public class PourScript : MonoBehaviour
         Vector3 wateringCanRotation = wateringCan.transform.eulerAngles;
         Debug.Log("euler rotation" + wateringCanRotation.z);
 
-        if (wateringCanRotation.z >= VRPourRotation && wateringCanRotation.z <= 90.0f)
+        if (wateringCanRotation.z >= VRPourRotation || wateringCanRotation.x >= VRPourRotation)// if rotated more than VRPourRotation then start pouring
         {
             //Debug.Log("POUR");
-            Debug.Log("rot.z more " + wateringCanRotation.z);
+            //Debug.Log("rot.z more " + wateringCanRotation.z);
 
 
             water.SetActive(true);//turn on water particles
 
         }
-        else if (wateringCanRotation.z <= VRPourRotation)
+        else if (wateringCanRotation.z <= VRPourRotation || wateringCanRotation.x <= VRPourRotation)//if not rotating at VRPourRotation turn off water
         {
             //Debug.Log("NOT POUR");
-            Debug.Log("rot.z less " + wateringCanRotation.z);
+            //Debug.Log("rot.z less " + wateringCanRotation.z);
 
             water.SetActive(false);//turn OFF water particles
 

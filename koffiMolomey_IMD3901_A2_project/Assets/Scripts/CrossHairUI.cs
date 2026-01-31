@@ -10,8 +10,7 @@ public class CrossHairUI : MonoBehaviour
 
     public void SetInteract(bool canInteract)
     {
-        crossHairImage.color=canInteract ? interactColor : normalColor;
-        Debug.Log("change cross hair UI");
+        crossHairImage.color=canInteract ? interactColor : normalColor;//change crossHair colour when hovering interactable objects
     }
 
 }

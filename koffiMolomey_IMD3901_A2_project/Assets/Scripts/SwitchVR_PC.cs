@@ -12,14 +12,15 @@ public class SwitchVR_PC : MonoBehaviour
 
    public GameObject crossHair;
 
-   public TextMeshProUGUI ToggleText;
+   public TextMeshProUGUI modeText;
+   public TextMeshProUGUI xHideShowText;
 
-    public GameObject soundSettingsCanvas;
 
+    public GameObject xHideShowRect;
     public GameObject PCInstructionsCanvas;
 
-   bool toggle;
-  bool PCInstructionsCanvasToggle;
+    bool toggle;
+   [SerializeField] bool PCInstructionsCanvasToggle;
 
     void Awake()
     {
@@ -28,7 +29,6 @@ public class SwitchVR_PC : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -50,13 +50,14 @@ public class SwitchVR_PC : MonoBehaviour
             VRPlayerPos = PCPlayerPos;
 
             //Change text to view which mode user is in
-            ToggleText.GetComponent<TextMeshProUGUI>().text = "VR mode";
+            modeText.GetComponent<TextMeshProUGUI>().text = "VR mode";
 
             VRObjects.SetActive(true);//activate VR hands and controls
 
             PCObjects.SetActive(false);//turn OFF PC controls
             crossHair.SetActive(false);//turn ON crossHair
-            PCInstructionsCanvas.SetActive(true);
+            PCInstructionsCanvas.SetActive(false);//turn off pc button instructions
+            xHideShowRect.SetActive(false);
 
 
         }
@@ -66,17 +67,27 @@ public class SwitchVR_PC : MonoBehaviour
             //set VR PLayer to same position as PC Player
             PCPlayerPos = VRPlayerPos;
 
-            ToggleText.GetComponent<TextMeshProUGUI>().text = "PC mode";
+            modeText.GetComponent<TextMeshProUGUI>().text = "PC mode";
 
             VRObjects.SetActive(false);//deactivate VR hands and controls
 
             PCObjects.SetActive(true);//turn ON PC controls
             crossHair.SetActive(true);//turn ON crossHair
 
-            if (PCInstructionsCanvasToggle == true)
-            {
+            xHideShowRect.SetActive(true);//show box saying press x to hide and show instructions
 
+
+            if (PCInstructionsCanvasToggle)// show PC button instructions
+            {
                 PCInstructionsCanvas.SetActive(true);
+                xHideShowText.GetComponent<TextMeshProUGUI>().text = "X to hide";
+
+            }
+            else
+            {
+                PCInstructionsCanvas.SetActive(false);// do not show PC button instructions
+                xHideShowText.GetComponent<TextMeshProUGUI>().text = "X to show";
+
             }
         }
     }

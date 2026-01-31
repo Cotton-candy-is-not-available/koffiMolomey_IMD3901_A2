@@ -8,7 +8,7 @@ public class GrowFlowers : MonoBehaviour
 
     [SerializeField] float maxHeight = 1.4f;
 
-    bool maxReached = true;
+    bool maxReached = false;
 
     private void OnParticleCollision(GameObject other)
     {
@@ -19,11 +19,11 @@ public class GrowFlowers : MonoBehaviour
             //keep going until reaches max height
 
         }
-        if (flower.transform.localScale.y <= maxHeight && maxReached == true)
+        if (flower.transform.localScale.y <= maxHeight && maxReached == false)
         {
             SoundManager.Instance.PlaySFX(SoundManager.Instance.maxGrowth);
             Debug.Log("Max reached");
-            //maxReached = false;
+            maxReached = true;
 
         }
     }

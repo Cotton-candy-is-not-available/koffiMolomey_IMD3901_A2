@@ -17,9 +17,10 @@ public class PourScript : MonoBehaviour
 
     // ------ VR variables --------------
 
-    [SerializeField] float VRStartRotation = 0.03f;
+    [SerializeField] float VRPourRotation = 30.0f;
 
     public GameObject VRObject;
+    public GameObject wateringCan;
 
 
     private void Start()
@@ -58,25 +59,27 @@ public class PourScript : MonoBehaviour
 
     public void VRPouring()
     {
-        //gameObject.transform.localRotation = Quaternion.identity;//set begining rotation to parent
+        Vector3 wateringCanRotation = wateringCan.transform.eulerAngles;
+        Debug.Log("euler rotation" + wateringCanRotation.z);
 
-        if (gameObject.transform.rotation.y>=VRStartRotation)
+        if (wateringCanRotation.z >= VRPourRotation && wateringCanRotation.z <= 90.0f)
         {
             //Debug.Log("POUR");
-            Debug.Log("transform.rotation.z more " + gameObject.transform.rotation.z);
+            Debug.Log("rot.z more " + wateringCanRotation.z);
 
 
             water.SetActive(true);//turn on water particles
 
         }
-        else if (gameObject.transform.rotation.y<=VRStartRotation)
+        else if (wateringCanRotation.z <= VRPourRotation)
         {
             //Debug.Log("NOT POUR");
-            Debug.Log("transform.rotation.z less " + gameObject.transform.rotation.z);
+            Debug.Log("rot.z less " + wateringCanRotation.z);
 
             water.SetActive(false);//turn OFF water particles
 
         }
+
     }
 
     public void StopPouring()

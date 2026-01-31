@@ -16,11 +16,15 @@ public class SwitchVR_PC : MonoBehaviour
 
     public GameObject soundSettingsCanvas;
 
-   [SerializeField] bool toggle;
+    public GameObject PCInstructionsCanvas;
+
+   bool toggle;
+  bool PCInstructionsCanvasToggle;
 
     void Awake()
     {
         toggle = false;
+        PCInstructionsCanvasToggle = false;
 
     }
 
@@ -31,6 +35,11 @@ public class SwitchVR_PC : MonoBehaviour
         if (Keyboard.current.mKey.wasPressedThisFrame)//press m to swtich between VR and PC mode
         {
             toggle = !toggle;
+
+        }
+        if (Keyboard.current.xKey.wasPressedThisFrame)//press x to turn on instruction
+        {
+            PCInstructionsCanvasToggle = !PCInstructionsCanvasToggle;
 
         }
 
@@ -47,6 +56,7 @@ public class SwitchVR_PC : MonoBehaviour
 
             PCObjects.SetActive(false);//turn OFF PC controls
             crossHair.SetActive(false);//turn ON crossHair
+            PCInstructionsCanvas.SetActive(true);
 
 
         }
@@ -63,8 +73,11 @@ public class SwitchVR_PC : MonoBehaviour
             PCObjects.SetActive(true);//turn ON PC controls
             crossHair.SetActive(true);//turn ON crossHair
 
+            if (PCInstructionsCanvasToggle == true)
+            {
 
-
+                PCInstructionsCanvas.SetActive(true);
+            }
         }
     }
 }
